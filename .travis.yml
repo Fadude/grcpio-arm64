@@ -1,0 +1,16 @@
+dist: trusty
+sudo: false
+services:
+  - docker
+
+arch:
+  - arm64
+
+script:
+  - docker-compose build
+deploy:
+  - provider: script
+    skip_cleanup: true
+    script: bash scripts/deploy_docker.sh
+    on:
+      branch: master

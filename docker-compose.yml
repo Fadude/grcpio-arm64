@@ -1,0 +1,5 @@
+version: '3'
+services:
+  python37-grpcio:
+    build: ./services/python37-grpcio
+    image: fadude/python37-grpcio-arm64:latest
