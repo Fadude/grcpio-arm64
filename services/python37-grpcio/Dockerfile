@@ -11,7 +11,7 @@ RUN sed -i "s#deb http://deb.debian.org/debian buster main#deb http://deb.debian
 RUN echo '[global]' > /etc/pip.conf \
     && echo 'extra-index-url=https://www.piwheels.org/simple' >> /etc/pip.conf
 RUN cat /etc/pip.conf
-
+RUN pip3 install grpcio
 #RUN export REPO_ROOT=grpc \
 #    && git clone -b v1.32.0 https://github.com/grpc/grpc $REPO_ROOT \
 #    && cd $REPO_ROOT \
