@@ -8,6 +8,8 @@ RUN sed -i "s#deb http://deb.debian.org/debian buster main#deb http://deb.debian
 	&& apt-get clean \
 	&& rm -rf /var/lib/apt/lists/*
 
+RUN echo '[global]' > /etc/pip.conf \
+    && echo 'extra-index-url=https://www.piwheels.org/simple' >> /etc/pip.conf
 RUN cat /etc/pip.conf
 
 #RUN export REPO_ROOT=grpc \
